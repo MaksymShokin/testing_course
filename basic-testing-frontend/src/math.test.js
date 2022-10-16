@@ -20,3 +20,19 @@ it('should return 0 if empty array is provided', () => {
   const result = add(values);
   expect(result).toBe(0);
 });
+
+it('should throw an error when no arguments provided', () => {
+  const resultFn = () => {
+    add();
+  };
+
+  expect(resultFn).toThrow();
+});
+
+it('should throw an error when provided with multiple arguments instead of an array', () => {
+  const resultFn = () => {
+    add(1, 2);
+  };
+
+  expect(resultFn).toThrow();
+});
