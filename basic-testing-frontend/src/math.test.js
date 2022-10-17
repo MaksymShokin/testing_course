@@ -34,5 +34,5 @@ it('should throw an error when provided with multiple arguments instead of an ar
     add(1, 2);
   };
 
-  expect(resultFn).toThrow();
+  expect(resultFn).toThrow(/is not iterable/);
 });
