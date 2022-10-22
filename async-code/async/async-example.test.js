@@ -21,7 +21,7 @@ describe('generateTokenPromise()', () => {
     const userEmail = 'test@a.com';
 
     // another way
-    // expect(generateTokenPromise(userEmail)).resolves.toBeTypeOf('string');
+    // return expect(generateTokenPromise(userEmail)).resolves.toBeTypeOf('string');
     const result = await generateTokenPromise(userEmail);
 
     expect(result).toBeTypeOf('string');
