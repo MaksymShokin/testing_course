@@ -14,12 +14,16 @@ describe('generateToken()', () => {
       }
     });
   });
-  // it('should call callback on finish', async () => {
-  //   const userEmail = 'test@a.com';
-  //   const fn = vitest.fn();
+});
 
-  //   await generateToken(userEmail, fn);
+describe('generateTokenPromise()', () => {
+  it('should return a string if promise resolved', async () => {
+    const userEmail = 'test@a.com';
 
-  //   expect(fn).toHaveBeenCalled();
-  // });
+    // another way
+    // expect(generateTokenPromise(userEmail)).resolves.toBeTypeOf('string');
+    const result = await generateTokenPromise(userEmail);
+
+    expect(result).toBeTypeOf('string');
+  });
 });
