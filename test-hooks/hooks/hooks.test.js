@@ -30,7 +30,7 @@ afterAll(() => {
   console.log('afterAll');
 });
 
-// Testing concurrency
+// Testing concurrency only for individual files. Running tests in different files in concurrent by default
 // Add to it
 it.concurrent('should update the email', () => {
   const newTestEmail = 'test2@test.com';
