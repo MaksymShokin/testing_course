@@ -1,4 +1,12 @@
-import { it, expect, beforeAll, beforeEach, afterAll, afterEach } from 'vitest';
+import {
+  it,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+  afterEach,
+  describe
+} from 'vitest';
 
 import { User } from './hooks';
 
@@ -20,6 +28,20 @@ afterEach(() => {
 
 afterAll(() => {
   console.log('afterAll');
+});
+
+// Testing concurrency
+// Add to it
+it.concurrent('should update the email', () => {
+  const newTestEmail = 'test2@test.com';
+
+  user.updateEmail(newTestEmail);
+
+  expect(user.email).toBe(newTestEmail);
+});
+// or add to describe
+describe.concurrent(() => {
+  // all tests
 });
 
 it('should update the email', () => {
