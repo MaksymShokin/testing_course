@@ -2,6 +2,7 @@ import { describe, expect, it, vitest } from 'vitest';
 import { generateToken, generateTokenPromise } from './async-example';
 
 describe('generateToken()', () => {
+  // for callbacks
   it('should return a string', done => {
     const userEmail = 'test@a.com';
 
@@ -17,6 +18,7 @@ describe('generateToken()', () => {
 });
 
 describe('generateTokenPromise()', () => {
+  // 2 ways for async await
   it('should return a string if promise resolved', async () => {
     const userEmail = 'test@a.com';
 

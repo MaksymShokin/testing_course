@@ -17,6 +17,7 @@ const fetchMock = vi.fn((url, options) => {
   });
 });
 
+// mock global fetch function
 vi.stubGlobal('fetch', fetchMock);
 
 it('should get response from calling a function', async () => {

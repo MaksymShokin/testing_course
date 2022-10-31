@@ -10,6 +10,8 @@ const htmlDocumentContent = fs.readFileSync(htmlDocPath).toString();
 
 const window = new Window();
 const document = window.document;
+
+// mock global document object
 vi.stubGlobal('document', document);
 
 // reset document

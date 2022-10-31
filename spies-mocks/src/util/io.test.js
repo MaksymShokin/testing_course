@@ -6,6 +6,7 @@ import writeData from './io';
 vi.mock('fs');
 vi.mock('path', () => {
   return {
+    // mock default function
     default: {
       join: (...args) => {
         return args[args.length - 1];
